@@ -44,6 +44,7 @@
     UIApplication *app = [UIApplication sharedApplication];
     // 遍历当前app的所有属性，找到关于状态栏的
     unsigned int outCount = 0;
+    // 返回类的所有属性和变量(包括在@interface大括号中声明的变量)
     Ivar *ivars = class_copyIvarList(app.class, &outCount);
     for (int i = 0; i < outCount; i++) {
         Ivar ivar = ivars[i];
